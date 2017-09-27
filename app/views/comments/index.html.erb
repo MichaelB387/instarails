@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<section>
+    <%= render @comments, photo: @photo%>
+</section>
+
+<%= render 'form', comment: @new_comment %>
