@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resource :profile
   root 'landing#index'
   devise_for :users
   resources :photos do
