@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resource :profile
+  get 'feed/index'
+  
   root 'landing#index'
   devise_for :users
+  resources :users, only: [:show, :update], controller: :profiles
+  resource :profile
   resources :photos do
    resources :comments
   end

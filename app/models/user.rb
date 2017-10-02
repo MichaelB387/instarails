@@ -17,5 +17,9 @@ class User < ApplicationRecord
   def followed_by?(user)
     followers.exists?(user.id)
   end
+
+  def photo_feed
+    Photo.where(user: self.following).order(created_at: :desc)
+  end
   
 end
